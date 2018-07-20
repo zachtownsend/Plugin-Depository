@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('pages.home');
+})->name('home');
+
+Route::get('/add_plugin', 'PluginController@create')->name('create');
+
+Route::post('/upload-plugin', 'PluginController@store')->name('upload-plugin');
+
+Route::get('/plugins', 'PluginController@show')->name('show');
